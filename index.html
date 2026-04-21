@@ -1,19 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Harry's Inn</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harry's Inn | Online Ordering Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to Harry's Inn</h1>
-  <p>Order food online below:</p>
+  <header class="hero">
+    <nav class="nav">
+      <div class="brand">Harry's Inn</div>
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#how">How It Works</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-  <h2>Menu</h2>
-  <ul>
-    <li>Burger - $10</li>
-    <li>Fries - $5</li>
-    <li>Chicken Sandwich - $9</li>
-  </ul>
+    <div class="hero-content">
+      <div>
+        <p class="eyebrow">Elmira Heights ordering demo</p>
+        <h1>Fast online food ordering for Harry's Inn</h1>
+        <p class="hero-text">
+          A clean, mobile-friendly menu built for pickup orders. This demo uses publicly listed food items
+          and lets customers customize selections, build a cart, and review their order before checkout.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#menu">Start Order</a>
+          <a class="btn secondary" href="#contact">Call Restaurant</a>
+        </div>
+      </div>
 
-  <button>Order Now</button>
+      <section class="order-card">
+        <h2>Your Order</h2>
+        <div id="cart-items" class="cart-items">
+          <p class="muted">Your cart is empty.</p>
+        </div>
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cart-total">$0.00</strong>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        <p class="small muted">Demo only — connect to Toast, Square, Clover, or Stripe later for live payments.</p>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="menu">
+      <div class="section-head">
+        <p class="eyebrow">Order food</p>
+        <h2>Harry's Inn menu</h2>
+        <p class="section-copy">Tap an item to customize it and add it to the cart.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="wings">Wings</button>
+        <button class="filter" data-filter="sandwiches">Sandwiches</button>
+        <button class="filter" data-filter="appetizers">Appetizers</button>
+        <button class="filter" data-filter="salads">Salads</button>
+        <button class="filter" data-filter="kids">Kids</button>
+      </div>
+
+      <div id="menu-grid" class="menu-grid"></div>
+    </section>
+
+    <section class="section alt" id="how">
+      <div class="section-head">
+        <p class="eyebrow">Why this works</p>
+        <h2>Built for easier restaurant ordering</h2>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <h3>Less phone time</h3>
+          <p>Customers can pick items, sauces, and add-ons without tying up staff on calls.</p>
+        </article>
+        <article class="feature">
+          <h3>Cleaner ordering</h3>
+          <p>Customization fields reduce mistakes on wings, burgers, sandwiches, and sides.</p>
+        </article>
+        <article class="feature">
+          <h3>Easy to pitch</h3>
+          <p>This can be shown live on a phone or laptop and expanded into a full restaurant system.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact-card">
+        <div>
+          <p class="eyebrow">Restaurant info</p>
+          <h2>Harry's Inn</h2>
+          <p>308 E 14th St, Elmira, NY</p>
+          <p>(607) 734-0202</p>
+          <p>Tue–Wed 3–9pm • Thu–Fri 11am–11pm • Sat 3–11pm • Sun 12–8pm</p>
+        </div>
+        <a class="btn primary" href="tel:+16077340202">Call Now</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="item-modal">
+    <div class="modal-card">
+      <button class="close-btn" id="close-modal" aria-label="Close">&times;</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
